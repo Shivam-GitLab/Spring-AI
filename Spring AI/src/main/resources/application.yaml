@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: Spring-AI
+  ai:
+    openai:
+      api-key: ${AZURE_OPENAI_API_KEY}
+      base-url: ${AZURE_OPENAI_BASE_URL}
+      chat:
+        model: gpt-5.6-sol-2
