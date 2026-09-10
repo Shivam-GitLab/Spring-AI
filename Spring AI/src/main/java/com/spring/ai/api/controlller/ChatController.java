@@ -18,14 +18,16 @@ import java.util.Map;
 public class ChatController {
 
     private final ChatClient chatClient;
-//    @Value("classpath:/prompts/prompt.st")
-//    private Resource promptResource;
 
     @Value("classpath:/prompts/prompt.st")
     private Resource promptResource;
 
     public ChatController(ChatClient.Builder builder) {
-        this.chatClient = builder.build();
+        this.chatClient = builder
+                .defaultSystem("You are a helpful AI assistant. You are expected to answer the questions related to the given domain.\" +\n" +
+                        "                        \"Any question that is asked outside of the domain, decline it by responding to user that \" +\n" +
+                        "                        \"'I specialize in the given domain and I can't answer any query outside it'.")
+                .build();
     }
 
     @PostMapping("/chat")
