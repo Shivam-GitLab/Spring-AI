@@ -1,4 +1,4 @@
-package com.spring.ai.api.response;
+package com.spring.ai.api.dtos.response;
 
 public record ChatResponse(
         boolean success,

@@ -1,4 +1,4 @@
-package com.spring.ai.api.request;
+package com.spring.ai.api.dtos.request;
 
 public record ChatRequest(
         String message
