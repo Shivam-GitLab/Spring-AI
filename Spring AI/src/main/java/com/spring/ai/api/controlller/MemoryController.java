@@ -15,7 +15,7 @@ public class MemoryController {
     private final ChatClient chatClient;
     private final ChatMemory chatMemory;
 
-    @GetMapping("/chat-momory")
+    @GetMapping("/chat-memory")
     public String chatMemoryMethod(@RequestParam String message,
                                    @RequestParam String conversationId ){
         return chatClient
@@ -26,5 +26,6 @@ public class MemoryController {
                         advisorSpec.param(ChatMemory.CONVERSATION_ID, conversationId))
                 .call()
                 .content();
+
     }
 }
