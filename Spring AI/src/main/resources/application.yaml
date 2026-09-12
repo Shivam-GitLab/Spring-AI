@@ -1,9 +1,19 @@
 spring:
   application:
     name: Spring-AI
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ai_memory_db
+    username: postgres
+    password: ShivamJha91
+    driver-class-name: org.postgresql.Driver
   ai:
     openai:
       api-key: ${AZURE_OPENAI_API_KEY}
       base-url: ${AZURE_OPENAI_BASE_URL}
       chat:
         model: gpt-5.6-sol-2
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: always
