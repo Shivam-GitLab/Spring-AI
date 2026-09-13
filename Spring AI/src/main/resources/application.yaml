@@ -17,3 +17,14 @@ spring:
         repository:
           jdbc:
             initialize-schema: always
+
+elevenlabs:
+  api-key: ${ELEVENLABS_API_KEY:sk_4f754ca1dd4cdb6a3d375147e1931d5c5a0c4fa08f3f19c2}
+  voice-id: ${ELEVENLABS_VOICE_ID:IKne3meq5aSn9XLyUdCD}
+
+logging:
+  level:
+    org:
+      springframework:
+        ai: TRACE
+

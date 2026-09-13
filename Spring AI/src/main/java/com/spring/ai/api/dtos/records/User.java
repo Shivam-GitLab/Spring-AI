@@ -1,4 +1,6 @@
 package com.spring.ai.api.dtos.records;
 
-public record User(int userId, String name, int age) {
+import java.util.List;
+
+public record User(int userId, String name, double age, String birthdate, List<String> Likes) {
 }

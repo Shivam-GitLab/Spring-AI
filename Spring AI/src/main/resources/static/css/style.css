@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #050505;
+    color: white;
+
+    font-family: Arial, sans-serif;
+}
+
+.jarvis {
+    text-align: center;
+}
+
+h1 {
+    font-size: 60px;
+    letter-spacing: 10px;
+}
+
+button {
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    border: 2px solid cyan;
+
+    background: transparent;
+
+    color: cyan;
+
+    font-size: 50px;
+
+    cursor: pointer;
+
+    box-shadow:
+            0 0 20px cyan,
+            inset 0 0 20px rgba(0,255,255,0.2);
+}
+
+button.recording {
+    border-color: red;
+    color: red;
+
+    box-shadow:
+            0 0 30px red,
+            inset 0 0 20px rgba(255,0,0,0.2);
+}
+
+#status {
+    margin-top: 30px;
+    color: #aaa;
+    font-size: 18px;
+}

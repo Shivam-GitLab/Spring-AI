@@ -1,0 +1,53 @@
+[
+  {
+    "userId": 1,
+    "name": "Jagriti",
+    "age": 3.5,
+    "birthdate": "05 Dec 2022",
+    "Likes": [
+      "IceCream",
+      "Chocolate",
+      "Melody",
+      "Kulfi"
+    ]
+  },
+  {
+    "userId": 2,
+    "name": "Ishank",
+    "age": 8.5,
+    "birthdate": "25 Feb 2019",
+    "Likes": [
+      "Cricket",
+      "Football"
+    ]
+  },
+  {
+    "userId": 3,
+    "name": "Radha",
+    "age": 29.0,
+    "birthdate": "13 Dec 1995",
+    "Likes": [
+      "Music",
+      "Dance"
+    ]
+  },
+  {
+    "userId": 4,
+    "name": "Prashant",
+    "age": 43.0,
+    "birthdate": "03 Nov 1980",
+    "Likes": [
+      "Reading"
+    ]
+  },
+  {
+    "userId": 5,
+    "name": "Shivam",
+    "age": 21.0,
+    "birthdate": "29 Sep 2004",
+    "Likes": [
+      "Coding",
+      "Gaming"
+    ]
+  }
+]
