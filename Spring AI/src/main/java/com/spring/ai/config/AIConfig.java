@@ -1,13 +1,20 @@
 package com.spring.ai.config;
 
+import com.openai.models.vectorstores.VectorStore;
+import com.spring.ai.advisors.MyCustomAdvisor;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
+import org.springframework.ai.chat.client.advisor.SafeGuardAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
+import org.springframework.ai.chat.client.advisor.vectorstore.QuestionAnswerAdvisor;
 import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.ai.chat.memory.repository.jdbc.JdbcChatMemoryRepository;
+import org.springframework.ai.vectorstore.SearchRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.List;
 
 @Configuration
 public class AIConfig {
@@ -35,9 +42,18 @@ public class AIConfig {
     }*/
 
     @Bean
-    public ChatClient chatClient(ChatClient.Builder builder, ChatMemory chatMemory) {
+    public ChatClient chatClient(ChatClient.Builder builder, MyCustomAdvisor myCustomAdvisor) {
         return builder
-                .defaultAdvisors(new SimpleLoggerAdvisor())
+                .defaultAdvisors(
+                        new SafeGuardAdvisor(List.of(
+                                "security",
+                                "confidential",
+                                "password"
+                        )),
+                        new SimpleLoggerAdvisor(),
+                        myCustomAdvisor
+                )
                 .build();
     }
+
 }
